@@ -1,4 +1,5 @@
 # anagram.py
+from collections import Counter #Counter dari modul collections Counter adalah subclass dari dict
 
 def is_anagram(s1: str, s2: str) -> bool:
     """
@@ -23,8 +24,12 @@ def is_anagram(s1: str, s2: str) -> bool:
     
     # Implement your solution here
     pass
+    hapus_s1 = [i.lower() for i in s1 if i.isalnum()]
+    hapus_s2 = [i.lower() for i in s2 if i.isalnum()]
+
+    return Counter (hapus_s1) == Counter(hapus_s2)
 
 # You can test your function with print statements below
 # Example:
-# print(is_anagram("Listen", "Silent"))  # Expected output: True
-# print(is_anagram("hello", "billion"))  # Expected output: False
+print(is_anagram("Listen", "Silent"))  # Expected output: True
+print(is_anagram("hello", "billion"))  # Expected output: False
