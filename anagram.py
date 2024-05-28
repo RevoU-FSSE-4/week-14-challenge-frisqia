@@ -1,6 +1,3 @@
-# anagram.py
-from collections import Counter #Counter dari modul collections Counter adalah subclass dari dict
-
 def is_anagram(s1: str, s2: str) -> bool:
     """
     This function checks if the two given strings `s1` and `s2` are anagrams.
@@ -19,20 +16,24 @@ def is_anagram(s1: str, s2: str) -> bool:
     - is_anagram("Listen", "Silent") should return True
     - is_anagram("hello", "billion") should return False
     """
-    # Step 1: Clean the strings by removing non-alphanumeric characters and converting to lowercase
-    # Step 2: Compare the character counts of both cleaned strings
+    def hapus_str(s):
+        hapus = {}
+        for i in s.lower():
+            if i.isalpha():
+                if i in hapus:
+                    hapus[i] += 1
+                else:
+                    hapus[i] = 1
+        return hapus
+
+    hapus_s1 = hapus_str(s1)
+    hapus_s2 = hapus_str(s2)
     
-    # Implement your solution here
-    pass
-    hapus_s1 = [i.lower() for i in s1 if i.isalpha()]
-    hapus_s2 = [i.lower() for i in s2 if i.isalpha()]
-    hapus_s1 = [i.upper() for i in s1 if i.isalnum()]
-    hapus_s2 = [i.upper() for i in s2 if i.isalnum()]
-    return Counter (hapus_s1) == Counter(hapus_s2)
+    return hapus_s1 == hapus_s2
 
 # You can test your function with print statements below
 # Example:
 print(is_anagram("Listen", "Silent"))  # Expected output: True
 print(is_anagram("hello", "billion"))  # Expected output: False
-print(is_anagram("Listen", "Silent"))  # Expected output: True
-print(is_anagram("hello", "billion"))  # Expected output: False
+
+
