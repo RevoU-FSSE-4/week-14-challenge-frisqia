@@ -29,7 +29,7 @@ def is_anagram(s1: str, s2: str) -> bool:
     clean_s1 = clean_str(s1)
     clean_s2 = clean_str(s2)
     
-    return hapus_s1 == hapus_s2
+    return clean_s1 == clean_s2
 
 # You can test your function with print statements below
 # Example:

@@ -21,7 +21,7 @@ def find_max(numbers: list) -> int:
         if num > max_num:
             max_num = num
     return max_num
-    
+
 # You can test your function with print statements below
 # Example:
 print(find_max([1, 2, 3, 4, 5]))  # Expected output: 5
