@@ -15,11 +15,11 @@ def count_vowels(s: str) -> int:
     - count_vowels("python") should return 1
     """
     # Implement your solution here
-    hurufVokal = "aeiouAEIOU" #disini aku buat besar dan kecil
+    vowels = "aeiouAEIOU" #disini aku buat besar dan kecil
     count = 0 
 
     for i in s:
-        if i in hurufVokal:
+        if i in vowels:
             count += 1
     
     return count
@@ -28,4 +28,4 @@ def count_vowels(s: str) -> int:
 print(count_vowels("hello world"))  # Expected output: 3
 print(count_vowels("python"))  # Expected output: 1
 print(count_vowels("revoU"))  # Expected output: 3
-print(count_vowels("tEam LIma"))  # Expected output: 4
+print(count_vowels("tEam LIma"))  # Expected output: 3

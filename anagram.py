@@ -16,18 +16,18 @@ def is_anagram(s1: str, s2: str) -> bool:
     - is_anagram("Listen", "Silent") should return True
     - is_anagram("hello", "billion") should return False
     """
-    def hapus_str(s):
-        hapus = {}
+    def clean_str(s):
+        clean = {}
         for i in s.lower():
             if i.isalpha():
-                if i in hapus:
-                    hapus[i] += 1
+                if i in clean:
+                    clean[i] += 1
                 else:
-                    hapus[i] = 1
-        return hapus
+                    clean[i] = 1
+        return clean
 
-    hapus_s1 = hapus_str(s1)
-    hapus_s2 = hapus_str(s2)
+    clean_s1 = clean_str(s1)
+    clean_s2 = clean_str(s2)
     
     return hapus_s1 == hapus_s2
 
