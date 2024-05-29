@@ -18,16 +18,16 @@ def is_palindrome(s: str) -> bool:
     - is_palindrome("racecar") should return True
     - is_palindrome("hello") should return False
     """
-    cleaned_chars = []
-    for char in s:
-        if char.isalpha():
-            cleaned_chars.append(char.lower())
+    cleaned_str = []
+    for i in s:
+        if i.isalpha():
+            cleaned_str.append(i.lower())
     count = 0
-    for char in cleaned_chars:
+    for i in cleaned_str:
         count += 1
     left, right = 0, count - 1
     while left < right:
-        if cleaned_chars[left] != cleaned_chars[right]:
+        if cleaned_str[left] != cleaned_str[right]:
             return False
         left += 1
         right -= 1
