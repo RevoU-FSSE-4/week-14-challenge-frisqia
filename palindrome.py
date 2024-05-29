@@ -18,10 +18,23 @@ def is_palindrome(s: str) -> bool:
     - is_palindrome("racecar") should return True
     - is_palindrome("hello") should return False
     """
-    pass
-
+    cleaned_chars = []
+    for char in s:
+        if char.isalpha():
+            cleaned_chars.append(char.lower())
+    count = 0
+    for char in cleaned_chars:
+        count += 1
+    left, right = 0, count - 1
+    while left < right:
+        if cleaned_chars[left] != cleaned_chars[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+    
 # You can test your function with print statements below
 # Example:
-# print(is_palindrome("A man, a plan, a canal, Panama"))  # Expected output: True
-# print(is_palindrome("racecar"))  # Expected output: True
-# print(is_palindrome("hello"))  # Expected output: False
+print(is_palindrome("A man, a plan, a canal, Panama"))  # Expected output: True
+print(is_palindrome("racecar"))  # Expected output: True
+print(is_palindrome("hello"))  # Expected output: False
